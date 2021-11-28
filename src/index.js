@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Form from './components/Form/form';
+import Menu from './HotelAdmin/menu';
+import Splash from './HotelAdmin/splash';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <Form />
+    <Menu/>
   </React.StrictMode>,
   document.getElementById('root')
 );

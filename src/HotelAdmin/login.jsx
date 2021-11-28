@@ -1,0 +1,83 @@
+import React from 'react'
+import {Link} from 'react-router-dom'
+import './Styles.css'
+import 'font-awesome/css/font-awesome.min.css'
+import 'bootstrap/dist/css/bootstrap.css'
+import Dropdown from 'react-bootstrap/Dropdown'
+
+const Login = ()=>{
+    return(
+        <div className='loginContainer'>
+            <div className='link'>
+                <h1>
+                    Montello
+                </h1>
+
+                <div className='dropdown'>
+                <Dropdown>
+                    <Dropdown.Toggle variant>
+                        Hotels
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                        <Dropdown.Item href='#'>
+                            Hotel Sandton Sun
+                        </Dropdown.Item>
+                        <Dropdown.Item href='#'>
+                            Sandton Star Hotel
+                        </Dropdown.Item>
+                        <Dropdown.Item href='#'>
+                            Palms Hotel
+                        </Dropdown.Item>
+                        <Dropdown.Item href='#'>
+                            Luxury Hotel
+                        </Dropdown.Item>
+                        <Dropdown.Item href='#'>
+                            Hotel @ Hatfield
+                        </Dropdown.Item>
+                        <Dropdown.Item href='#'>
+                            Sheranton Pretoria Hotel
+                        </Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
+                </div>
+                <h2>Reservations</h2>
+                <h2>Management</h2>
+                    
+                    <div className='user'>
+                        <div className='profile'>
+                            <i className='fa fa-user fa-3x' ></i>
+                        </div>
+
+                        <div className='username'>
+                            <h3>Admin Name</h3>
+                        </div>
+                    </div>
+            </div>
+            <div className='content'>
+                <div className='heading'>
+                    <h1>Welcome Admin</h1>
+                </div>
+                <div className='log'>
+                    <h2>E-mail</h2>
+                   <div className='input-icons'>
+                   <i className='fa fa-envelope fa-2x'></i>
+                    <input type='email' placeholder='Hotel Email Address'
+                    className='input-field'
+                    />
+                   </div>
+                    <h2>Password</h2>
+                    <div className='input-icons'>
+                   <i className='fa fa-lock fa-2x'></i>
+                    <input type='password' placeholder='Ref. Number'
+                    className='input-field'
+                    />
+                    <i className='fa fa-eye fa-2x' style={{marginLeft:'-3%'}}></i>
+                   </div>
+                  <Link to='/guestlist'>  <button type='submit' name='submit' className='logbutton'>Submit</button></Link>
+                </div>
+            </div>
+        </div>
+    )
+}
+export default Login
+
