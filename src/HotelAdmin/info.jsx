@@ -9,6 +9,7 @@ import r from '../images/blackwoman.png'
 import y from '../images/woman.png'
 import q from '../images/SplashImage.png'
 import b from '../images/indi.jpg'
+import c from '../images/bendie.jpeg'
 
 
 class Info{
@@ -67,10 +68,10 @@ notifications=[{
         id:'4',name:'New Booking Alert',time:'Today 19:15',pic:b
     },
     {
-        id:'5',name:'New Booking Alert',time:'Today 19:17',pic:b
+        id:'5',name:'New Booking Alert',time:'Today 19:17',pic:c
     },
     {
-        id:'6',name:'New Booking Alert',time:'Today 19:25',pic:b
+        id:'6',name:'Montello Hotel App',time:'Today 20:15',pic:q
     },
 ]
 }

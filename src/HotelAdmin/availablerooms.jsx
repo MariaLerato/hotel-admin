@@ -83,7 +83,7 @@ const Rooms = ()=>{
                             <li key={data.id}>
                                <img src={data.pic} alt='rooms' style={{width:144,height:94,borderRadius:10}}/>
                                 <button type='submit' style={{height:40}}>{data.button1}</button>
-                                <button type='submit' style={{marginLeft:'5%',height:40}}>{data.but}</button>
+                                <button type='submit' style={{height:40}}>{data.but}</button>
                                 {/* <button type='submit' className='book'>Book</button> */}
                             </li>
                             )

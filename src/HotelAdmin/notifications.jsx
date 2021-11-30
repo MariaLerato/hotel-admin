@@ -62,9 +62,7 @@ const Notifications = ()=>{
                       <i className='fa fa-search fa-2x' style={{padding:'2.5%'}}></i>
                         <input type='text' name='search' placeholder='Search Notifications'  className='search-input'/>
                    </div>
-                   <div className='alarm'>
-                    <button type='submit'>Add New Room</button>
-                   </div>
+                   
                 </div>
                 <div className='guestlist'>
                    <div className='icon-home'>
