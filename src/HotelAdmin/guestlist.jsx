@@ -65,7 +65,7 @@ const Guests = () => {
                             <input type='text' name='search' placeholder='Search Guest'  className='search-input'/>
                        </div>
                        <div className='alarm'>
-                        <i className='fa fa-bell fa-2x'></i>
+                    <Link to ='/notifications'> <i className='fa fa-bell fa-2x' color={'#1C5248'}></i></Link>
                        </div>
                     </div>
                     <div className='guestlist'>
@@ -81,9 +81,13 @@ const Guests = () => {
                           {
                              Info.guests.map(data=>
                                 <li key={data.id}>
+                                    <div>
                                     {data.name}
                                     <p>{data.location}</p>
-                                    {/* <button type='submit' className='book'>Book</button> */}
+                                    </div>
+                                    <>
+                                    <button type='submit' className='book'>Book</button>
+                                    </>
                                 </li>
                                 )
                           }

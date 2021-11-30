@@ -1,19 +1,17 @@
 import React from 'react';
-import './Styles.css'
-import { Dropdown } from 'react-bootstrap';
 import Info from './info';
-import k from '../images/male.png'
+import { Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import k from '../images/male.png'
 
-const Rooms = ()=>{
+const Notifications = ()=>{
     return(
         <>
-        <div className='GuestContainer'>
+             <div className='GuestContainer'>
             <div className='link'>
                 <h1>
                     Montello
                 </h1>
-
                 <div className='dropdown' style={{height:45}}>
                     <Dropdown>
                         <Dropdown.Toggle variant>
@@ -62,7 +60,7 @@ const Rooms = ()=>{
                 <div className='header'>
                    <div className='input-icons'>
                       <i className='fa fa-search fa-2x' style={{padding:'2.5%'}}></i>
-                        <input type='text' name='search' placeholder='Search Rooms'  className='search-input'/>
+                        <input type='text' name='search' placeholder='Search Notifications'  className='search-input'/>
                    </div>
                    <div className='alarm'>
                     <button type='submit'>Add New Room</button>
@@ -70,22 +68,25 @@ const Rooms = ()=>{
                 </div>
                 <div className='guestlist'>
                    <div className='icon-home'>
-                    <i className='fa fa-bed' style={{marginTop:4,marginLeft:-3,color:'#5bad9b'}}></i>
-                        <p>/Rooms</p>
+                    <i className='fa fa-bell' style={{marginTop:4,marginLeft:-3,color:'#5bad9b'}}></i>
+                        <p>/Notifications</p>
                    </div>
                    <div className='hotel'>
-                       <h2>Hotel Rooms</h2>
+                       <h2>Notifications</h2>
                        <p>Hotel @ Hatfield</p>
                    </div>
                    <div className='list'>
                       {
-                         Info.rooms.map(data=>
-                            <li key={data.id}>
-                               <img src={data.pic} alt='rooms' style={{width:144,height:94,borderRadius:10}}/>
-                                <button type='submit' style={{height:40}}>{data.button1}</button>
-                                <button type='submit' style={{marginLeft:'5%',height:40}}>{data.but}</button>
-                                {/* <button type='submit' className='book'>Book</button> */}
-                            </li>
+                         Info.notifications.map(data=>
+                           
+                              <div className='notifications'  key={data.id}>
+                              <img src={data.pic} alt='rooms' style={{width:68,height:70,borderRadius:40}}/>
+                                <div className='text'>
+                                <h5>{data.name}</h5>
+                                <p>{data.time}</p>
+                                </div>
+                                </div>
+                            
                             )
                       }
                     
@@ -93,7 +94,7 @@ const Rooms = ()=>{
                 </div>
             </div>
         </div>
-    </>
+        </>
     )
 }
-export default Rooms
+export default Notifications
