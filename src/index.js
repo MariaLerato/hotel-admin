@@ -5,11 +5,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Menu from './HotelAdmin/menu';
 import Splash from './HotelAdmin/splash';
+import SystemMenu from './SystemAdmin/System';
+import SystemLogin from './SystemAdmin/signin';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <Menu/>
+    <SystemMenu/>
   </React.StrictMode>,
   document.getElementById('root')
 );

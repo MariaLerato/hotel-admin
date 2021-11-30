@@ -1,13 +1,15 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import './Styles.css'
+import '../HotelAdmin/Styles.css'
 import 'font-awesome/css/font-awesome.min.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import Dropdown from 'react-bootstrap/Dropdown'
+import l from '../images/maria.png'
 
-const Login = ()=>{
+const SystemLogin = ()=>{
     return(
-        <div className='loginContainer'>
+       <div>
+           <div className='loginContainer'>
             <div className='link'>
                 <h1>
                     Montello
@@ -43,13 +45,13 @@ const Login = ()=>{
                 <h2>Reservations</h2>
                 <h2>Management</h2>
                     
-                    <div className='user'>
-                        <div className='profile'>
-                            <i className='fa fa-user fa-3x' ></i>
+                <div className='user'>
+                        <div className='profilepicture'>
+                            <img src={l} alt={'admin'} ></img>
                         </div>
 
                         <div className='username'>
-                            <h3>Admin Name</h3>
+                            <h3>System Admin</h3>
                         </div>
                     </div>
             </div>
@@ -73,11 +75,12 @@ const Login = ()=>{
                     />
                     <i className='fa fa-eye fa-2x' style={{marginLeft:'-3%'}}></i>
                    </div>
-                    <Link to='/guestlist'>  <button type='submit' name='submit' className='logbutton'>Submit</button></Link>
+                  <Link to='/registeredhotels'>  <button type='submit' name='submit' className='logbutton'>Submit</button></Link>
                 </div>
             </div>
         </div>
+       </div>
     )
 }
-export default Login
+export default SystemLogin
 
