@@ -352,7 +352,7 @@ i {
     color: white;
     font-weight: 500;
     font-size: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 .logout{
     display: flex;
@@ -368,9 +368,14 @@ i {
 
 }   
 .systemusername{
-    color:white
+    color:white;
+    margin-left: -2%;
 }
 .systemusername p{
     color:#1C5248;
-    font-weight: 400;
+    font-weight: 500;
+    margin-left: 2%;
+}
+.systemuser{
+    margin: 2%;
 }
