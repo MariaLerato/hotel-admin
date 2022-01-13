@@ -1,10 +1,44 @@
-import React from 'react'
+import React,{useState} from 'react'
 import  Dropdown  from 'react-bootstrap/Dropdown'
 import '../HotelAdmin/Styles.css'
 import Info from '../HotelAdmin/info'
 import { Link } from 'react-router-dom'
 import l from '../images/maria.png'
+import { Modal } from "@material-ui/core";
+
 const Hotels = () => {
+    const [open,setOpen] = useState(false)
+    
+    const closeModal = ()=>{
+        setOpen(false)
+    }
+    const openModal = ()=>{
+        setOpen(true)
+    }
+   const hello=()=>{
+       <h1>Hello</h1>
+   }
+   const ModalOpen = ()=>{
+    return(
+        <div>
+            <Modal 
+            onClose={closeModal}
+            open={open}
+            style={{
+                position: 'absolute',
+                border: '2px solid #000',
+                backgroundColor: 'gray',
+                boxShadow: '2px solid black',
+                height:80,
+                width: 240,
+                margin: 'auto'
+
+            }}
+            >
+                </Modal>  
+        </div>
+    )
+   }
     return (
         <>
             <div className='GuestContainer'>
@@ -57,7 +91,7 @@ const Hotels = () => {
                                 )
                           }
                          <div>
-                         <button type='submit' className='addnew' >Add New Hotel</button>
+                         <button type='submit' className='addnew' onClick={ModalOpen} >Add New Hotel</button>
                          </div>
                         
                        </div>

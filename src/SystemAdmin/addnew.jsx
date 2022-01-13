@@ -1,9 +1,46 @@
-import React from "react";
+import React,{useState} from "react";
 import l from '../images/maria.png'
 import { Link } from "react-router-dom";
 import Info from "../HotelAdmin/info";
+import { Modal } from "@material-ui/core";
 
 const AddNew = () =>{
+    const [open,setOpen] = useState(false)
+    
+    const closeModal = ()=>{
+        setOpen(false)
+    }
+    const openModal = ()=>{
+        setOpen(true)
+    }
+   
+   const ModalOpen = ()=>{
+    return(
+        <div>
+            <h4>Modal Component</h4>   
+            <button type='submit'
+            onClick={openModal}
+            >
+                Open Modal
+            </button>  
+            <Modal 
+            onClose={closeModal}
+            open={open}
+            style={{
+                position: 'absolute',
+                border: '2px solid #000',
+                backgroundColor: 'gray',
+                boxShadow: '2px solid black',
+                height:80,
+                width: 240,
+                margin: 'auto'
+
+            }}
+            >
+                </Modal>  
+        </div>
+    )
+   }
     return(
         <>
          <div className='GuestContainer'>
