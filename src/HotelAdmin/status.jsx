@@ -65,7 +65,7 @@ const Status = ()=>{
                         <input type='text' name='search' placeholder='Search Guest'  className='search-input'/>
                    </div>
                    <div className='alarm'>
-                    <i className='fa fa-bell fa-2x'></i>
+                        <Link to='/notifications'>     <i className='fa fa-bell '></i></Link>
                    </div>
                 </div>
                 <div className='guestlist'>

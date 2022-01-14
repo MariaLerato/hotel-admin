@@ -42,8 +42,8 @@ const SystemLogin = ()=>{
                     </Dropdown.Menu>
                 </Dropdown>
                 </div>
-                <h2>Reservations</h2>
-                <h2>Management</h2>
+                <h2 className='subheading'>Register Hotels</h2>
+                    <h2>System Maintenance</h2>
                     
                 <div className='user'>
                         <div className='profilepicture'>

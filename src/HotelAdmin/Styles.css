@@ -59,6 +59,7 @@ i {
     background-color:#57A99A ;
     padding:2%;
     height: 100vh;
+    position: fixed;
 }
 .link h1{
     color:white;
@@ -100,24 +101,24 @@ i {
 .dropdown{
     background-color: #61B0A2;
     color: white;
-    height: 5%; 
+    height: 8%; 
 }
 .content{
     width: 100%;
 }
 .log{
     width:
-    35%;
+    38%;
     margin:auto;
     justify-content: center;
     align-items: center;
-    margin-top: 12%;
+    margin-top: 5%;
     margin-left: 28%;
    
 }
 .input-icons i {
     position: absolute;
-    padding: 10px;
+    padding: 20px;
     min-width: 40px;
     color: #1C5248;
 }
@@ -127,12 +128,12 @@ i {
     /* margin-bottom: 10px; */
 }
 .icon {
-    padding: 10px;
+    padding: 9px;
     min-width: 40px;
 }
 .input-field {
     width: 100%;
-    padding: 0px;
+    padding: 8px;
     padding-left: 18%;
     border-bottom-color: #B2B2B2;
     border-bottom-width:0.5px;
@@ -142,6 +143,7 @@ i {
     font-weight: 500;
     font-size: 19px;
     margin-top: 4%;
+    outline: none;
 }
 .log h2{
     color:#1C5248;
@@ -191,7 +193,8 @@ i {
     color:#64D3BF !important
 }
 .guests{
-    width: 100%;
+    width: 80%;
+    margin-left: 20%;
 }
 .header{
     box-shadow: 0px 2px #dddddd;
@@ -209,8 +212,8 @@ i {
     font-size: 20px;
 }
 .alarm{
-    margin-left: -30%;
-    margin-top: 2%;
+    margin-left: -20%;
+    margin-top: 4%;
     
    
     
@@ -330,6 +333,7 @@ i {
     display: flex;
     flex-direction: row;
     justify-content:space-between ;
+    /* background-color: white; */
 }
 .registerButton button{
     font-size: 12px;
@@ -357,14 +361,15 @@ i {
 .logout{
     display: flex;
     flex-direction: row;
-    margin-top: 50%;
+    margin-top: 40%;
 }
 .logout i{
     color:white
 }
 .logout h3{
+ 
     color:white;
-    padding-left:2%
+    font-size: 20px;
 
 }   
 .systemusername{
@@ -378,4 +383,42 @@ i {
 }
 .systemuser{
     margin: 2%;
+}
+.hotellist{
+    /* background-color: #e6fffa; */
+    /* height: 100vh; */
+}
+.ModalContainer{
+    background-color: white;
+    height: 100%;
+    border-radius:40px,
+   
+}
+.Add{
+    align-content: center;
+    padding:  2%;
+}
+.Add h2{
+    padding:  2%;
+    margin-left: 35%;
+    color: #1C5248;
+}
+.hotel-input-icons{
+    width: 90%;
+
+}
+.hotel-input-icons i{
+    position: absolute;
+    padding: 25px;
+    min-width: 40px;
+    color: #1C5248;
+    margin-bottom: 0;
+}
+.hotel-input-icons input{
+    background-color: #E8FDF9;
+    height: 45px;
+    border-bottom-color: transparent;
+    margin-bottom: 0px;
+    border-radius: 10px;
+
 }

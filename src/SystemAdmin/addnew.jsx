@@ -1,9 +1,17 @@
-import React from "react";
+import React,{useState} from "react";
 import l from '../images/maria.png'
 import { Link } from "react-router-dom";
 import Info from "../HotelAdmin/info";
+import  Modal  from "@material-ui/core/Modal";
 
 const AddNew = () =>{
+    const [open,setOpen] = useState(true)
+    const close= ()=>{
+        setOpen(false)
+    }
+    const handleOpen = ()=>{
+        setOpen(true)
+    }
     return(
         <>
          <div className='GuestContainer'>
@@ -28,36 +36,23 @@ const AddNew = () =>{
                         <h3>Log Out</h3>
                     </div>
                 </div>
-                <div className='guests'>
-                    <div className='header'>
-                       <div className='input-icons'>
-                          <i className='fa fa-search fa-2x' style={{padding:'2.5%'}}></i>
-                            <input type='text' name='search' placeholder='Search Hotels'  className='search-input'/>
-                       </div>
-                    </div>
-                    <div className='guestlist'>
-                       <div className='icon-home'>
-                        <i className='fa fa-pencil' style={{marginTop:4,marginLeft:-3,color:'#5bad9b'}}></i>
-                            <p>/Registered Hotels</p>
-                       </div>
-                       <div style={{margin:'4%'}} >
-                          {
-                             Info.guests.map(data=>
-                                <li key={data.id} className='listHotels' >
-                                  <p style={{paddingLeft:'4%',fontSize:20,fontWeight:'400'}}>  {data.name}</p>
-                                   <div className='registerButton'>
-                                       <button type='submit' style={{marginLeft:'-30%',width:144,height:44}} >Registered</button>
-                                        <button type='submit' style={{marginLeft:'5%',width:144,height:44}}>De-register</button>
-                                   </div>
-                                </li>
-                                )
-                          }
-                         <div>
-                         <button type='submit' className='addnew' >Add New Hotel</button>
-                         </div>
-                        
-                       </div>
-                    </div>
+                <div>
+                    <button type='button' onClick={handleOpen}>Open Modal</button>
+                    <Modal
+                     open={open}
+                     onClose={close}
+                     style={{
+                        position: 'absolute',
+                        border: '2px solid #000',
+                        backgroundColor: 'gray',
+                        boxShadow: '2px solid black',
+                        height:80,
+                        width: 240,
+                        margin: 'auto'
+                      }}
+                    >
+                      <h2>How are you?</h2>
+                    </Modal>
                 </div>
             </div>
         </>

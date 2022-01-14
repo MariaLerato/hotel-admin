@@ -65,7 +65,7 @@ const Guests = () => {
                             <input type='text' name='search' placeholder='Search Guest'  className='search-input'/>
                        </div>
                        <div className='alarm'>
-                    <Link to ='/notifications'> <i className='fa fa-bell fa-2x' color={'#1C5248'}></i></Link>
+                    <Link to ='/notifications'> <i className='fa fa-bell ' color={'#1C5248'}></i></Link>
                        </div>
                     </div>
                     <div className='guestlist'>

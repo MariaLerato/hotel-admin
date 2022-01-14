@@ -74,5 +74,21 @@ notifications=[{
         id:'6',name:'Montello Hotel App',time:'Today 20:15',pic:q
     },
 ]
+registered=[{
+    id:'0',name:'Hotel Sandton Sun'
+},
+{
+    id:'1',name:'Sandton Star Hotel'
+},
+{
+    id:'2',name:'Palms Hotel'
+},
+{
+    id:'3',name:'Signature Luxury Hotel'
+},
+{
+    id:'4',name:'RH Protea Hotel'
+}
+]
 }
 export default new Info()
