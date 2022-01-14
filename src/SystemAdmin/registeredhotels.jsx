@@ -14,6 +14,41 @@ const Hotels = () => {
     const handleOpen = ()=>{
         setOpen(true)
     }
+import { Modal } from "@material-ui/core";
+
+const Hotels = () => {
+    const [open,setOpen] = useState(false)
+    
+    const closeModal = ()=>{
+        setOpen(false)
+    }
+    const openModal = ()=>{
+        setOpen(true)
+    }
+   const hello=()=>{
+       <h1>Hello</h1>
+   }
+   const ModalOpen = ()=>{
+    return(
+        <div>
+            <Modal 
+            onClose={closeModal}
+            open={open}
+            style={{
+                position: 'absolute',
+                border: '2px solid #000',
+                backgroundColor: 'gray',
+                boxShadow: '2px solid black',
+                height:80,
+                width: 240,
+                margin: 'auto'
+
+            }}
+            >
+                </Modal>  
+        </div>
+    )
+   }
     return (
         <>
             <div className='GuestContainer'>
@@ -113,5 +148,5 @@ const Hotels = () => {
             </div>
         </>
     )
-}
+}}
 export default Hotels

@@ -116,6 +116,7 @@ i {
     margin-left: 28%;
    
 }
+
 .input-icons i {
     position: absolute;
     padding: 20px;
@@ -210,6 +211,7 @@ i {
     width: 55%;
     border-radius: 10px ;
     font-size: 20px;
+    outline: none;
 }
 .alarm{
     margin-left: -20%;
@@ -347,7 +349,7 @@ i {
 }
 .addnew{
     margin-top: 5%;
-  margin-left: 79%;
+    margin-left: 79%;
     border-radius: 5px;
     height: 60px;
     width: 20%;
