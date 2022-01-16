@@ -1,7 +1,22 @@
 import app from './server.js'
 import mongodb from 'mongodb'
 import dotenv from 'dotenv'
+import RestaurantsDAO from './dao/restaurantsDAO.js'
+import mongoose from 'mongoose'
 
+
+// Address
+const url = "http://localhost:5000/api/v1/restaurants"
+
+mongoose.connect(url).then((ans)=>{
+    console.log("ConnectedSuccessful")
+}).catch((err)=>{
+    console.log("Error")
+})
+// Calling Schema class
+const Schema = mongoose.Schema;
+
+// https://www.geeksforgeeks.org/mongoose-module-introduction/
 dotenv.config()
 const MongoClient = mongodb.MongoClient
 
@@ -18,6 +33,7 @@ MongoClient.connect(
     process.exit(1)
 })
 .then(async client =>{
+    await  RestaurantsDAO.injectDB(client)
     app.listen(port,()=>{
         console.log(`Listening on port ${port}`)
     })
