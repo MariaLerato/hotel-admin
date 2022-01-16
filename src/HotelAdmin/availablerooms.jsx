@@ -1,11 +1,19 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './Styles.css'
 import { Dropdown } from 'react-bootstrap';
 import Info from './info';
 import k from '../images/male.png'
 import { Link } from 'react-router-dom';
+import  Modal  from "@material-ui/core/Modal";
 
 const Rooms = ()=>{
+    const [open,setOpen] = useState(true)
+    const close= ()=>{
+        setOpen(false)
+    }
+    const handleOpen = ()=>{
+        setOpen(true)
+    }
     return(
         <>
         <div className='GuestContainer'>
@@ -65,7 +73,7 @@ const Rooms = ()=>{
                         <input type='text' name='search' placeholder='Search Rooms'  className='search-input'/>
                    </div>
                    <div className='alarm'>
-                    <button type='submit'>Add New Room</button>
+                    <button type='submit' onClick={handleOpen}>Add New Room</button>
                    </div>
                 </div>
                 <div className='guestlist'>
@@ -90,6 +98,43 @@ const Rooms = ()=>{
                       }
                     
                    </div>
+
+                </div>
+                <div className='Container'>
+                <Modal
+                     open={open}
+                     onClose={close}
+                     style={{
+                        position:'absolute',
+                        border: '2px solid #61B0A2',
+                        width:'40%',
+                        height:'60%',
+                        margin: 'auto',
+                        borderRadius:10,
+                        alignItems:'center',
+                        justifyContent:'center'
+                      }}
+                    >
+                      <div className='ModalContainer'>
+                        <div className='Add'>
+                            <h2 style={{marginLeft:'2%'}}>Add Hotel Room</h2>
+                            <div className='hotel-input-icons'>
+                            <i className='fa fa-bed fa-2x'></i>
+                            <input type='text' placeholder='Type Of Room'
+                            className='input-field'
+                            />
+                            </div>
+                            <div className='hotel-input-icons'>
+                            <i className='fa fa-camera fa-2x'></i>
+                            <input type='text' placeholder='Add Picture'
+                            className='input-field'
+                            />
+                           
+                        </div>
+                        <button type='button' className='addnew' style={{width:170,marginLeft:'65%'}}>Add New Room</button> 
+                        </div>
+                      </div>
+                    </Modal>
                 </div>
             </div>
         </div>

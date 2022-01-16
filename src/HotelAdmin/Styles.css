@@ -215,10 +215,7 @@ i {
 }
 .alarm{
     margin-left: -20%;
-    margin-top: 4%;
-    
-   
-    
+    margin-top: 4%;  
 }
 .alarm button{
     border-radius: 8px !important;
@@ -295,15 +292,14 @@ i {
     font-size: 15px;
 }
 .listItems li{
-    list-style-type: number;
     background-color: rgb(255, 255, 255);
     padding:1%;
-    list-style-position:inside;
     margin-top: 1px;
-    list-style-position: vertical;
     color:#1C5248;
     font-size: 20px;
     border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
 }
 .listItems p{
     padding-left: 3%;

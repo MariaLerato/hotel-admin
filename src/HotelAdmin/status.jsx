@@ -81,11 +81,16 @@ const Status = ()=>{
                    <div className='listItems'>
                       {
                          Info.guests.map(data=>
-                            <li key={data.id} style={{marginBottom:'-2%'}}>
+                            <li key={data.id}>
+                                <div>
                                 {data.name}
                                 <p>{data.location}</p>
-                                <button type='submit' className='check'  style={{marginTop:'-4%',marginLeft:'70%',backgroundColor:'#61B0A2',height:40}}>{data.status1}</button>
-                                <button type='submit' className='check' style={{marginTop:'-4%',marginLeft:'2%',height:40}}>{data.status2}</button>
+                                </div>
+                                <div style={{display:'flex',marginRight:'4%'}}>
+                                <button type='submit' className='check'  style={{height:40,width:100}}>{data.status1}</button>
+                                <button type='submit' className='check' style={{height:40,width:100}}>{data.status2}</button>
+                                </div>
+                  
                             </li>
                             )
                       }

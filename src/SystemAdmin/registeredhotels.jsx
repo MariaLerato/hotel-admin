@@ -14,7 +14,6 @@ const Hotels = () => {
     const handleOpen = ()=>{
         setOpen(true)
     }
-import { Modal } from "@material-ui/core";
 
 const Hotels = () => {
     const [open,setOpen] = useState(false)
