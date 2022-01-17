@@ -14,22 +14,22 @@ import c from '../images/bendie.jpeg'
 
 class Info{
     guests=[{
-        id:0, name:'Maria Fenyane',location:'Limpopo,Lebowakgomo',status1:'checkin',status2:'checkout'
+        id:0, name:'Maria Fenyane',location:'Limpopo,Lebowakgomo',status1:'checkin',status2:'checkout',indate:'15/10/2022',outDate:'18/10/2022',room:'Room A',status:'CheckedIn', total:'R1849.00'
     },
     {
-        id:1, name:'Meiki Maponya',location:'Gauteng,Pretoria',status1:'checkin',status2:'checkout'
+        id:1, name:'Meiki Maponya',location:'Gauteng,Pretoria',status1:'checkin',status2:'checkout',indate:'18/10/2022',outDate:'20/10/2022',room:'Room A',status:'Booked', total:'R1849.00'
     },{
-        id:2,name:'Chrisian Poeko',location:'Capetown',status1:'checkin',status2:'checkout'
+        id:2,name:'Chrisian Poeko',location:'Capetown',status1:'checkin',status2:'checkout',indate:'22/10/2022',outDate:'28/10/2022',room:'Room B',status:'CheckedIn', total:'R1500.00'
     },
     {
-        id:3,name:'Melita Mapelane',location:'Limpopo, Polokwane',status1:'checkin',status2:'checkout'
+        id:3,name:'Melita Mapelane',location:'Limpopo, Polokwane',status1:'checkin',status2:'checkout',indate:'23/10/2022',outDate:'25/10/2022',room:'Room C',status:'Booked', total:'R2100.00'
         },{
-        id:4,name:'Makoma Ntswana',location:'Limpopo,Polokwane',status1:'checkin',status2:'checkout'
+        id:4,name:'Makoma Ntswana',location:'Limpopo,Polokwane',status1:'checkin',status2:'checkout',indate:'15/10/2022',outDate:'18/10/2022',room:'Room B',status:'CheckedIn', total:'R1500.00'
     },{
-        id:5,name:'Thapelo Chaba', location:'East Cape',status1:'checkin',status2:'checkout'
+        id:5,name:'Thapelo Chaba', location:'East Cape',status1:'checkin',status2:'checkout',indate:'01/11/2022',outDate:'05/11/2022',room:'Room A',status:'Booked', total:'R1849.00'
     },
     {
-        id:6,name:'Moagi Mphahlele',location:'Limpopo, Polokwane',status1:'checkin',status2:'checkout'
+        id:6,name:'Moagi Mphahlele',location:'Limpopo, Polokwane',status1:'checkin',status2:'checkout',indate:'15/11/2022',outDate:'20/11/2022',room:'Room C',status:'Booked', total:'R2100.00'
     }
 ]
 rooms=[{

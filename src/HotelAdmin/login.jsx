@@ -13,32 +13,8 @@ const Login = ()=>{
                     Montello
                 </h1>
 
-                <div className='dropdown'>
-                <Dropdown>
-                    <Dropdown.Toggle variant>
-                        Hotels
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                        <Dropdown.Item href='#'>
-                            Hotel Sandton Sun
-                        </Dropdown.Item>
-                        <Dropdown.Item href='#'>
-                            Sandton Star Hotel
-                        </Dropdown.Item>
-                        <Dropdown.Item href='#'>
-                            Palms Hotel
-                        </Dropdown.Item>
-                        <Dropdown.Item href='#'>
-                            Luxury Hotel
-                        </Dropdown.Item>
-                        <Dropdown.Item href='#'>
-                            Hotel @ Hatfield
-                        </Dropdown.Item>
-                        <Dropdown.Item href='#'>
-                            Sheranton Pretoria Hotel
-                        </Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
+                <div className='dropdown' style={{height:45,color:'#519c84',alignContent:'center',textAlign:'center',paddingTop:'4%'}}>
+                    Hotel Name
                 </div>
                 <h2>Reservations</h2>
                 <h2>Management</h2>

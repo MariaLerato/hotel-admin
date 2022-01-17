@@ -4,6 +4,8 @@ import './Styles.css'
 import k from '../images/male.png'
 import Info from './info'
 import { Link } from 'react-router-dom'
+import  {GuestListCard}  from './GuestListCard'
+
 
 const Guests = () => {
     return (
@@ -13,36 +15,12 @@ const Guests = () => {
                     <h1>
                         Montello
                     </h1>
-
-                    <div className='dropdown' style={{height:45}}>
-                        <Dropdown>
-                            <Dropdown.Toggle variant>
-                                Hotels
-                            </Dropdown.Toggle>
-                            <Dropdown.Menu>
-                                <Dropdown.Item href='#'>
-                                    Hotel Sandton Sun
-                                </Dropdown.Item>
-                                <Dropdown.Item href='#'>
-                                    Sandton Star Hotel
-                                </Dropdown.Item>
-                                <Dropdown.Item href='#'>
-                                    Palms Hotel
-                                </Dropdown.Item>
-                                <Dropdown.Item href='#'>
-                                    Luxury Hotel
-                                </Dropdown.Item>
-                                <Dropdown.Item href='#'>
-                                    Hotel @ Hatfield
-                                </Dropdown.Item>
-                                <Dropdown.Item href='#'>
-                                    Sheranton Pretoria Hotel
-                                </Dropdown.Item>
-                            </Dropdown.Menu>
-                        </Dropdown>
-                    </div>
+             
+                    <div className='dropdown' style={{height:45,color:'#519c84',alignContent:'center',textAlign:'center',paddingTop:'4%'}}>
+                    Hotel @ Hatfield
+                </div>
                     <h2 className='subheading'>Reservations</h2>
-                    <p className='activity'> Bookings</p>
+                 
                     <p  className='activity2'> Guests</p>
                   <Link to='/status'>  <p> Check In</p></Link>
                     <h2>Management</h2>
@@ -61,11 +39,11 @@ const Guests = () => {
                 <div className='guests'>
                     <div className='header'>
                        <div className='input-icons'>
-                          <i className='fa fa-search fa-2x' style={{padding:'2.5%'}}></i>
+                          <i className='fa fa-search fa-2x' style={{padding:'1.8%'}}></i>
                             <input type='text' name='search' placeholder='Search Guest'  className='search-input'/>
                        </div>
-                       <div className='alarm'>
-                    <Link to ='/notifications'> <i className='fa fa-bell ' color={'#1C5248'}></i></Link>
+                       <div className='alarmNotfication'>
+                    <Link to ='/notifications'> <i className='fa fa-bell  ' style={{color:'#256b5e'}} ></i></Link>
                        </div>
                     </div>
                     <div className='guestlist'>
@@ -79,17 +57,10 @@ const Guests = () => {
                        </div>
                        <div className='list'>
                           {
-                             Info.guests.map(data=>
-                                <li key={data.id}>
-                                    <div>
-                                    {data.name}
-                                    <p>{data.location}</p>
-                                    </div>
-                                    <>
-                                    <button type='submit' className='book'>Book</button>
-                                    </>
-                                </li>
-                                )
+                           
+                             Info.guests.map((data,index)=>(
+                                 <GuestListCard data={data} index={index}/>
+                             ))
                           }
                         
                        </div>

@@ -5,15 +5,22 @@ import Info from './info';
 import k from '../images/male.png'
 import { Link } from 'react-router-dom';
 import  Modal  from "@material-ui/core/Modal";
+import axios from 'axios'
 
 const Rooms = ()=>{
-    const [open,setOpen] = useState(true)
+    const [open,setOpen] = useState(false)
+    const [selected,setSelected] = useState(null)
+    const [disabled,setDisplay] = useState(true)
     const close= ()=>{
         setOpen(false)
     }
     const handleOpen = ()=>{
-        setOpen(true)
+        setOpen(!open)
     }
+    const handleClick = (btn)=>{
+       setDisplay(!disabled)
+    }
+   
     return(
         <>
         <div className='GuestContainer'>
@@ -22,35 +29,11 @@ const Rooms = ()=>{
                     Montello
                 </h1>
 
-                <div className='dropdown' style={{height:45}}>
-                    <Dropdown>
-                        <Dropdown.Toggle variant>
-                            Hotels
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu>
-                            <Dropdown.Item href='#'>
-                                Hotel Sandton Sun
-                            </Dropdown.Item>
-                            <Dropdown.Item href='#'>
-                                Sandton Star Hotel
-                            </Dropdown.Item>
-                            <Dropdown.Item href='#'>
-                                Palms Hotel
-                            </Dropdown.Item>
-                            <Dropdown.Item href='#'>
-                                Luxury Hotel
-                            </Dropdown.Item>
-                            <Dropdown.Item href='#'>
-                                Hotel @ Hatfield
-                            </Dropdown.Item>
-                            <Dropdown.Item href='#'>
-                                Sheranton Pretoria Hotel
-                            </Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
+                <div className='dropdown' style={{height:45,color:'#519c84',alignContent:'center',textAlign:'center',paddingTop:'4%'}}>
+                    Hotel @ Hatfield
                 </div>
                 <h2 className='subheading'>Reservations</h2>
-                <p> Bookings</p>
+               
                <Link to='/guestlist'> <p> Guests</p></Link>
               <Link to='/status'>  <p> Check In</p></Link>
                 <h2>Management</h2>
@@ -90,13 +73,22 @@ const Rooms = ()=>{
                          Info.rooms.map(data=>
                             <li key={data.id}>
                                <img src={data.pic} alt='rooms' style={{width:144,height:94,borderRadius:10}}/>
-                                <button type='submit' style={{height:40}}>{data.button1}</button>
-                                <button type='submit' style={{height:40}}>{data.but}</button>
-                                {/* <button type='submit' className='book'>Book</button> */}
+                                <button type='submit' style={{height:40,width:144,marginLeft:'35%'}}>{data.button1}</button>
+                                <button type='submit' style={{height:40,width:144}}  disabled={true}>{data.but}</button>
+                              
                             </li>
                             )
                       }
-                    
+                        {selected && (
+                                <div >
+                                <li>
+                                <img alt='not found' width={"144px"} style={{borderRadius:10}} src={URL.createObjectURL(selected)}/>
+                                    <button type='submit' style={{height:40,width:144,marginLeft:'35%'}}>Available</button>
+                                <button type='submit' style={{height:40,width:144}}>Not Available</button>
+                                </li>
+                                </div>
+                            )}
+                   
                    </div>
 
                 </div>
@@ -106,9 +98,9 @@ const Rooms = ()=>{
                      onClose={close}
                      style={{
                         position:'absolute',
-                        border: '2px solid #61B0A2',
-                        width:'40%',
-                        height:'60%',
+                     
+                        width:'30%',
+                        height:350,
                         margin: 'auto',
                         borderRadius:10,
                         alignItems:'center',
@@ -117,21 +109,22 @@ const Rooms = ()=>{
                     >
                       <div className='ModalContainer'>
                         <div className='Add'>
-                            <h2 style={{marginLeft:'2%'}}>Add Hotel Room</h2>
+                            <h2 style={{marginLeft:'20%'}}>Add Hotel Room</h2>
                             <div className='hotel-input-icons'>
                             <i className='fa fa-bed fa-2x'></i>
                             <input type='text' placeholder='Type Of Room'
-                            className='input-field'
+                            className='input-field' 
                             />
                             </div>
                             <div className='hotel-input-icons'>
-                            <i className='fa fa-camera fa-2x'></i>
-                            <input type='text' placeholder='Add Picture'
-                            className='input-field'
+                            <i className='fa fa-camera fa-2x' ></i>
+                            <input type='file' placeholder='Add Picture' name='ImageStyle'
+                            className='input-field' onChange={(event)=>setSelected(event.target.files[0])}
                             />
+                          
                            
                         </div>
-                        <button type='button' className='addnew' style={{width:170,marginLeft:'65%'}}>Add New Room</button> 
+                        <button type='button' className='addnew' style={{width:170,marginLeft:'65%',marginTop:'10%'}}>Add New Room</button> 
                         </div>
                       </div>
                     </Modal>
