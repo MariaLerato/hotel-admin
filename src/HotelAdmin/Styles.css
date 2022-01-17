@@ -367,7 +367,7 @@ i {
 }
 .systemusername {
   color: white;
-  margin-left: -2%;
+  margin-left: 4%;
 }
 .systemusername p {
   color: #1c5248;
@@ -376,6 +376,9 @@ i {
 }
 .systemuser {
   margin: 2%;
+}
+.profilepicture{
+    margin-left: 8%;
 }
 .hotellist {
   /* background-color: #e6fffa; */

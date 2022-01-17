@@ -11,7 +11,7 @@ import SystemLogin from './SystemAdmin/signin';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Menu/>
+    <SystemMenu/>
   </React.StrictMode>,
   document.getElementById('root')
 );
