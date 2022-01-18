@@ -4,6 +4,7 @@ import Rooms from "./availablerooms";
 import BookingHistory from "./bookings";
 import Guests from "./guestlist";
 import Login from "./login";
+import  {MessageAlert}  from "../SystemAdmin/message";
 import Notifications from "./notifications";
 import Splash from "./splash";
 import Status from "./status";
@@ -18,7 +19,7 @@ const Menu = ()=>{
                     <Route exact path={'/availablerooms'} element={<Rooms/>}/>
                     <Route exact path={'/status'} element={<Status/>}/>
                     <Route exact path={'/notifications'} element={<Notifications/>}/>
-                    <Route exact path={'/bookings'} element={<BookingHistory/>}/>
+                    <Route exact path={'/message'} element={<MessageAlert/>}/>
                     <Route exact path={'/'} element={<Splash/>}/>
                     
                 </Routes>

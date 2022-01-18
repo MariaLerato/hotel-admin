@@ -73,7 +73,7 @@ const Rooms = ()=>{
                          Info.rooms.map(data=>
                             <li key={data.id}>
                                <img src={data.pic} alt='rooms' style={{width:144,height:94,borderRadius:10}}/>
-                                <button type='submit' style={{height:40,width:144,marginLeft:'35%'}}>{data.button1}</button>
+                                <button type='submit' style={{height:40,width:144,marginLeft:'35%'}} onClick={()=>disabled}>{data.button1}</button>
                                 <button type='submit' style={{height:40,width:144}}  disabled={true}>{data.but}</button>
                               
                             </li>
@@ -83,7 +83,7 @@ const Rooms = ()=>{
                                 <div >
                                 <li>
                                 <img alt='not found' width={"144px"} style={{borderRadius:10}} src={URL.createObjectURL(selected)}/>
-                                    <button type='submit' style={{height:40,width:144,marginLeft:'35%'}}>Available</button>
+                                    <button type='submit' style={{height:40,width:144,marginLeft:'35%'}} >Available</button>
                                 <button type='submit' style={{height:40,width:144}}>Not Available</button>
                                 </li>
                                 </div>

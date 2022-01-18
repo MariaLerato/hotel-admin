@@ -2,13 +2,53 @@ import React, { useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import "../HotelAdmin/Styles.css";
 import Info from "../HotelAdmin/info";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import l from "../images/maria.png";
 import Modal from "@material-ui/core/Modal";
 
 const Hotels = () => {
+  const registered =[ 
+    {
+    
+        id:'0',name:'Hotel Sandton Sun'
+    },
+    {
+        id:'1',name:'Sandton Star Hotel'
+    },
+    {
+        id:'2',name:'Palms Hotel'
+    },
+    {
+        id:'3',name:'Signature Luxury Hotel'
+    },
+    {
+        id:'4',name:'RH Protea Hotel'
+    
+    }]
   const [open, setOpen] = useState(false);
-  const [add, setAdd] = useState();
+  const [add, setAdd] = useState(registered);
+  const [name,setName] = useState();
+  const [search,setSearch] = useState();
+
+  const [ id,setId] = useState()
+
+    const FilterSearch = ()=>{
+     {add.filter(data=>data.name.includes(name)).map(data=> (
+        <li>
+          {data}
+        </li>
+      
+     ))}
+    }
+  const handleChange = (e)=>{
+    setName(e.target.value)
+  }
+  const handleAdd = ()=>{
+    const newList = Info.registered.concat({name})
+    setAdd(newList)
+    setName('')
+  }
+
   const close = () => {
     setOpen(false);
   };
@@ -16,6 +56,7 @@ const Hotels = () => {
     setOpen(!open);
   };
 
+  const navigate = useNavigate()
   return (
     <>
       <div className="GuestContainer">
@@ -32,8 +73,8 @@ const Hotels = () => {
           </div>
 
           <h2 className="subheading">Register Hotels</h2>
-          <h2>System Maintenance</h2>
-          <div className="logout">
+          <h2 style={{color:'white',marginTop:'-8%'}}>System Maintenance</h2>
+          <div className="logout" style={{marginTop:'35%'}}>
             <i className="fa fa-sign-out fa-2x"></i>
             <Link to="/signin">
               <h3>Log Out</h3>
@@ -49,6 +90,8 @@ const Hotels = () => {
                 name="search"
                 placeholder="Search Hotels"
                 className="search-input"
+                onChange={FilterSearch}
+               
               />
             </div>
           </div>
@@ -61,8 +104,9 @@ const Hotels = () => {
               <p>/Registered Hotels</p>
             </div>
             <div style={{ margin: "1%" }}>
-              {Info.registered.map((data) => (
-                <li key={data.id} className="listHotels">
+              { add.map((data) => (
+              <ul>
+                  <li key={data.id} className="listHotels">
                   <p
                     style={{
                       paddingLeft: "4%",
@@ -78,29 +122,22 @@ const Hotels = () => {
                     <button
                       type="submit"
                       style={{ marginLeft: "-30%", width: 144, height: 44 }}
+                   
                     >
                       Register
                     </button>
                     <button
                       type="submit"
                       style={{ marginLeft: "5%", width: 144, height: 44 }}
+                   
                     >
                       De-register
                     </button>
                   </div>
                 </li>
+              </ul>
               ))}
-            {add && (
-                                <div >
-                                <li>
-                                <p>{add}</p>
-                                  <div className ="registerButton">
-                                  <button type='submit' style={{marginLeft: "-30%", width: 144, height: 44 }}>Register</button>
-                                <button type='submit' style={{marginLeft: "5%", width: 144, height: 44 }}>De-register</button>
-                                  </div>
-                                </li>
-                                </div>
-                            )}
+           
               <div>
                 <button type="button" className="addnew" onClick={handleOpen}>
                   Add New Hotel
@@ -128,6 +165,8 @@ const Hotels = () => {
                           type="text"
                           placeholder="Hotel Admin"
                           className="input-field"
+                          onChange={handleChange}
+                          value={name}
                         />
                       </div>
                       <div className="hotel-input-icons">
@@ -150,6 +189,7 @@ const Hotels = () => {
                         type="button"
                         className="addnew"
                         style={{ width: 170, marginLeft: "65%" }}
+                        onClick={handleAdd}
                       >
                         Add New Hotel
                       </button>
@@ -164,4 +204,4 @@ const Hotels = () => {
     </>
   );
 };
-export default Hotels;
+export default Hotels

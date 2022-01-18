@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import "./Styles.css";
+import { useNavigate } from "react-router-dom";
+
 export const StatusListCard = ({ data }) => {
   const [checked, setChecked] = useState();
+  const navigate = useNavigate()
   const [out, setOut] = useState();
   const [status,setStatus ] = useState('Pending')
 
   const handleCheck = () => {
     setStatus('Checked In')
     alert(
-        ` ${data.name} was successfully Checked In  Room Number 214 `
-      );
+      ` ${data.name} was successfully Checked In Room Number 214 `
+    );
   };
   const handleOut = () => {
     setStatus('Checked Out');
@@ -17,7 +20,9 @@ export const StatusListCard = ({ data }) => {
       ` ${data.name} was successfully Checked Out, Collect Keys For Room Number 214 `
     );
   };
-  
+  setTimeout (()=>{
+
+  },5000)
 
   return (
     <div key={data.id} className="statusList">
@@ -31,7 +36,9 @@ export const StatusListCard = ({ data }) => {
           type="submit"
           className="check"
           style={{ height: 40, width: '80%' }}
-          onClick={() => handleCheck()}
+          onClick={() => handleCheck()
+        
+          }
         >
           {data.status1}
         </button>

@@ -34,13 +34,14 @@ i {
 }
 
 .button button {
-  height: 50px;
-  width: 200px;
-  background-color: #31b49c;
-  border-color: #31b49c;
+  height: 60px;
+  width: 220px;
+  background-color: #3accb1;
+  border-color: #3accb1;
+
   color: white;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 25px;
   margin-top: 190%;
   margin-left: -70%;
   border-radius: 5px;
