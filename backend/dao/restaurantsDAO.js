@@ -1,10 +1,12 @@
+import mongodb from 'mongodb'
+const ObjectId = mongodb.ObjectId
+
 let restaurants
 
 export default class RestaurantsDAO {
     static async injectDB(conn) {
         if (restaurants) {
             return
-
         }
         try {
             restaurants = await conn.db(process.env.Rest_Ns).collection("restaurants")
@@ -51,4 +53,60 @@ try{
     )
     return{restaurantsList:[],totalNumRestaurants:0}
 }
-    }}
+    }
+
+static async getRestaurantById(id){
+    try{
+        const pipeline = [
+            {
+                $match:{
+                    _id:new ObjectId(id),
+                },
+            },
+            {
+                $lookup:{
+                    from :"reviews",
+                    let:{
+                        id:"$_id"
+                    },
+                    pipeline:[
+                        {
+                            $match:{
+                                $expr:{
+                                    $eq:["$restaurant_id","$$id"],
+                                },
+                            },
+                        },
+                        {
+                            $sort:{
+                                date:- 1
+                            },
+                        },
+                    ],
+                    as:"reviews"
+                },
+            },
+            {
+                $addFields:{
+                    reviews:"$reviews",
+                },
+            },
+        ]
+        return await restaurants.aggregate(pipeline).next()
+    } catch (e){
+        console.log(`Something went wrong in getRestaurantById : ${e}`)
+        throw e
+    }
+}
+static async getCuisines(){
+    let cuisines = []
+    try{
+        cuisines = await restaurants.distinct("cuisine")
+        return cuisines
+    }catch (e){
+        console.error(`Unable to get cuisines, ${e}`)
+        return cuisines
+    }
+}
+
+}

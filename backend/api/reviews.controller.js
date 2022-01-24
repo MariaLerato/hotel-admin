@@ -1,12 +1,10 @@
 import ReviewsDAO from "../dao/reviewsDAO.js";
-
+import BSON from "bson";
+const ObjectId = BSON.ObjectID
 export default class ReviewsController {
-
     static async apiPostReview(req, res, next) {
      
         try {
-
-
             const restaurantId = req.body.restaurant_id
             const review = req.body.text
             const userInfo = {
@@ -15,13 +13,13 @@ export default class ReviewsController {
             }
 
             const date = new Date()
+
             const ReviewResponse = await ReviewsDAO.addReview(
-                restaurantId,
+              ObjectId(restaurantId),
                 userInfo,
                 review,
                 date
             )
-           
             res.json({ status: "success" })
 
         } catch (e) {

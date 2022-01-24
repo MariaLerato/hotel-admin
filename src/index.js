@@ -7,12 +7,12 @@ import Menu from './HotelAdmin/menu';
 import Splash from './HotelAdmin/splash';
 import SystemMenu from './SystemAdmin/System';
 import SystemLogin from './SystemAdmin/signin';
-
+import {BrowserRouter} from 'react-router-dom'
 
 ReactDOM.render(
   <React.StrictMode>
-    <SystemMenu/>
-  </React.StrictMode>,
+  <SystemMenu />
+</React.StrictMode>,
   document.getElementById('root')
 );
 

@@ -153,7 +153,7 @@ const Hotels = () => {
                     borderRadius: 10,
                     alignItems: "center",
                     justifyContent: "center",
-                    // backgroundColor: '#E8FDF9',
+                  
                   }}
                 >
                   <div className="ModalContainer">
@@ -163,7 +163,7 @@ const Hotels = () => {
                         <i className="fa fa-building fa-2x"></i>
                         <input
                           type="text"
-                          placeholder="Hotel Admin"
+                          placeholder="Hotel Name"
                           className="input-field"
                           onChange={handleChange}
                           value={name}
@@ -177,7 +177,7 @@ const Hotels = () => {
                           className="input-field"
                         />
                         <div className="input-icons">
-                          <i className="fa fa-account  fa-2x"></i>
+                          <i className="fa fa-address-card  fa-2x"></i>
                           <input
                             type="text"
                             placeholder="Hotel ID"

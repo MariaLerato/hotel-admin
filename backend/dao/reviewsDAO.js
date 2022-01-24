@@ -2,7 +2,7 @@ import mongodb from 'mongodb'
 
 const ObjectId = mongodb.ObjectId
 
-let reviews = {}
+let reviews 
 
 export default class ReviewsDAO{
     static async injectDB(conn){
@@ -16,16 +16,15 @@ export default class ReviewsDAO{
             console.log(`Unable to establish collection handles in userDAO:${e}`)
         }
     }
-    // https://github.com/diegohaz/rest
+  
     static async addReview(restaurantId, user,review,date){
         try{
-            const reviewDoc = {name:user.name,
+            const reviewDoc = { name:user.name,
             user_id:user._id,
             date:date,
             text:review,
             restaurant_id: ObjectId(restaurantId),    
         }
-        console.log(reviewDoc)
         return await reviews.insertOne(reviewDoc)
       
         }catch(e){

@@ -3,6 +3,7 @@ import mongodb from 'mongodb'
 import dotenv from 'dotenv'
 import RestaurantsDAO from './dao/restaurantsDAO.js'
 import mongoose from 'mongoose'
+import ReviewsDAO from './dao/reviewsDAO.js'
 
 
 // Address
@@ -34,6 +35,7 @@ MongoClient.connect(
 })
 .then(async client =>{
     await  RestaurantsDAO.injectDB(client)
+    await ReviewsDAO.injectDB(client)
     app.listen(port,()=>{
         console.log(`Listening on port ${port}`)
     })
