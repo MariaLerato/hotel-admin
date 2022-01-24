@@ -1,7 +1,7 @@
 import app from './server.js'
 import mongodb from 'mongodb'
 import dotenv from 'dotenv'
-import RestaurantsDAO from './dao/restaurantsDAO.js'
+import HotelsDAO from './dao/HotelsDAO.js'
 import mongoose from 'mongoose'
 import ReviewsDAO from './dao/reviewsDAO.js'
 
@@ -24,7 +24,7 @@ const MongoClient = mongodb.MongoClient
 const port = process.env.Port || 8000
 
 MongoClient.connect(
-    process.env.Reviews_db,{
+    process.env.ConnectionString,{
         maxPoolSize: 50,
         wtimeoutMS:25,
         useNewUrlParser:true
@@ -34,8 +34,7 @@ MongoClient.connect(
     process.exit(1)
 })
 .then(async client =>{
-    await  RestaurantsDAO.injectDB(client)
-    await ReviewsDAO.injectDB(client)
+    await  HotelsDAO.injectDB(client)
     app.listen(port,()=>{
         console.log(`Listening on port ${port}`)
     })
