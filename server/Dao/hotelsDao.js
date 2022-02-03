@@ -24,6 +24,7 @@ export default class HotelDAO{
             name: hotel.name,
             hotel_id:hotelsId,
             text:description,
+            image:hotel.image,
             guest:hotel.guest,
             room:hotel.room,
             province:hotel.province,
@@ -84,11 +85,12 @@ export default class HotelDAO{
         }
     }
    
-    static async addHotelRoom(hotelId,name,description,date){
+    static async addHotelRoom(hotelId,name,description,date,image){
         try{
             const hotelRoomHoc = {
                 hotel_id:ObjectId(hotelId),
                 name:name,
+                image:image,
                 text:description,
                 date:date
 

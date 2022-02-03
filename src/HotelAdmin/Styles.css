@@ -14,6 +14,7 @@
 .image img {
   width: 100%;
   margin-top: 10%;
+  justify-self: center;
 }
 .right {
   width: 30%;
@@ -61,38 +62,46 @@ i {
 }
 .link h1 {
   color: white;
-  font-size: 45px;
+  font-size: 10;
   margin-bottom: 10%;
+  text-align: center;
 }
 .link h2 {
   color: #1C5248;
-  font-size: 20px;
+  font-size: 18px;
   padding: 8%;
   margin-top: 8%;
+  text-align: center;
 }
 .user {
- 
   margin-top: 20%;
 }
 .profile {
   background-color: white;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   margin: 4%;
+  margin-left: 20%;
+  
+}
+.reserv{
+  text-align: center;
+  font-size: 15;
 }
 .profile i {
   align-self: center;
   justify-content: center;
   color: #d4d4d4;
-  margin-top: 8%;
-  margin-left: 6%;
+  margin-top: 10%;
+  margin-left: 10%;
 }
 .username h3 {
   color: white;
-  font-size: 20px;
+  font-size: 20;
   font-weight: 500;
-  margin-top: 20%;
+
+  text-align: center;
 }
 .dropdown {
   background-color: #61b0a2;
@@ -181,7 +190,8 @@ i {
   padding-left: 10%;
 }
 .link img {
-  margin-right: 2px;
+  padding-left: 2%;
+  align-self: center;
 }
 .activity2 {
   color: #64d3bf !important;
@@ -341,7 +351,7 @@ i {
   margin-top: 2%;
 }
 .addnew {
-  margin-top: 5%;
+  margin-top: 2%;
   margin-left: 79%;
   border-radius: 5px;
   height: 60px;
@@ -368,17 +378,18 @@ i {
 .systemusername {
   color: white;
   margin-left: 4%;
+  text-align: center;
 }
-.systemusername p {
+.addAdmin {
   color: #1c5248;
   font-weight: 500;
-  margin-left: 2%;
+  text-align: center;
 }
 .systemuser {
   margin: 2%;
 }
 .profilepicture{
-    margin-left: 8%;
+    margin-left: 25%;
 }
 .hotellist {
   /* background-color: #e6fffa; */
@@ -391,8 +402,14 @@ i {
 }
 .Add {
   align-content: center;
-  padding: 2%;
+  padding: 4%;
 }
+
+.Add input{
+   margin: 2%;
+  padding-left:15%;
+}
+
 .Add h2 {
   padding: 2%;
   margin-left: 35%;
@@ -403,14 +420,14 @@ i {
 }
 .hotel-input-icons i {
   position: absolute;
-  padding: 25px;
+  padding: 15px;
   min-width: 40px;
   color: #1c5248;
   margin-bottom: 0;
 }
 .hotel-input-icons input {
   background-color: #e8fdf9;
-  height: 45px;
+  height: 50px;
   border-bottom-color: transparent;
   margin-bottom: 0px;
   border-radius: 10px;

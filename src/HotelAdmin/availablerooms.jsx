@@ -7,12 +7,14 @@ import { Link } from 'react-router-dom';
 import Modal from "@material-ui/core/Modal";
 import HotelDataService from '../services/hotels'
 import bed from '../images/room2.png'
+import FileBase64 from 'react-file-base64'
 
 const Rooms = () => {
     const [open, setOpen] = useState(false)
     const [selected, setSelected] = useState(null)
     const [rooms, setRooms] = useState([])
     const [room, setRoom] = useState()
+    const [image,setImage] = useState()
     const [description, setDesc] = useState()
     const [disabled, setDisplay] = useState(true)
     const [hotelrooms,setGuestList] = useState([])
@@ -38,7 +40,7 @@ const Rooms = () => {
    
     async  function addRoom(e){
         e.preventDefault()
-        const u={room,description,id}
+        const u={room,description,id,image}
         console.log(u)
         HotelDataService.createHotel(u)
         .then(res=>console.log(res.data))
@@ -55,12 +57,15 @@ const Rooms = () => {
                         Hotel @ Hatfield
                     </div>
                     <h2 className='subheading'>Reservations</h2>
-
+                    <div className='reserv'>
                     <Link to='/guestlist'> <p> Guests</p></Link>
                     <Link to='/status'>  <p> Check In</p></Link>
+                    </div>
                     <h2>Management</h2>
+                    <div className='reserv'>
                     <p> Settings </p>
                     <p style={{ color: '#64D3BF' }}> Rooms </p>
+                    </div>
                     <div className='user'>
                         <div className='profilepicture'>
                             <img src={k} alt={'admin'} ></img>
@@ -94,13 +99,11 @@ const Rooms = () => {
                             {
                                hotelrooms.map(data =>
                                     <li key={data.id}>
-                                        <img src={bed} alt={data.room} style={{width:144,height:94,borderRadius:10}}/> 
-                                        
+                                        <img src={bed} alt={data.room} style={{width:144,height:94,borderRadius:10}}/>           
                                         <button type='submit' style={{ height: 40, width: 144, marginLeft: '35%' }} onClick={() => disabled}>Available</button>
                                         <button type='submit' style={{ height: 40, width: 144 }} disabled={true}>Not Available</button>
 
-                                    </li>
-                                    
+                                    </li>    
                                 )
                             }
                             {selected && (
@@ -124,8 +127,9 @@ const Rooms = () => {
                             style={{
                                 position: 'absolute',
 
-                                width: '30%',
+                                width: '40%',
                                 height: 350,
+                                padding:'2%',
                                 margin: 'auto',
                                 borderRadius: 10,
                                 alignItems: 'center',
@@ -142,14 +146,15 @@ const Rooms = () => {
                                             value={room}
                                             onChange={(e)=>setRoom(e.target.value)}
                                         />
-                                    </div>
-                                                {/* <div className='hotel-input-icons'>
-                                        <i className='fa fa-camera fa-2x' ></i> */}
-                                                {/* <input type='file' placeholder='Add Picture' name='ImageStyle'
-                                        className='input-field' onChange={(event)=>setSelected(event.target.files[0])}
+                                        {/* <FileBase64
+                                        type="file"
+                                        multiple={false}
+                                        onDone={({base64})=>setImage({image:base64})}
                                         /> */}
+                                    </div>
+                                       
 
-<button type='button' className='addnew' style={{ width: 170, marginLeft: '65%', marginTop: '10%' }} onClick={addRoom} >Add New Room</button>
+                                    <button type='button' className='addnew' style={{ width: 170, marginLeft: '55%', marginTop: '2%' }} onClick={addRoom} >Add New Room</button>
                                 </form>
                           
                             </div>

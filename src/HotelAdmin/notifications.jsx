@@ -16,12 +16,15 @@ const Notifications = ()=>{
                     Hotel @ Hatfield
                 </div>
                 <h2 className='subheading'>Reservations</h2>
-           
+                <div className='reserv'>
                <Link to='/guestlist'> <p> Guests</p></Link>
               <Link to='/status'>  <p> Check In</p></Link>
+              </div>
                 <h2>Management</h2>
+                <div className='reserv'>
                 <p> Settings </p>
                 <p style={{color:'#64D3BF'}}> Rooms </p>
+                </div>
                 <div className='user'>
                     <div className='profilepicture'>
                         <img src={k} alt={'admin'} ></img>

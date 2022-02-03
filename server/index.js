@@ -11,7 +11,8 @@ Mongo.connect(
     process.env.Connect ,{
      maxPoolSize:50,
      wtimeoutMS:250,
-     useNewUrlParser: true
+     useNewUrlParser: true,
+     useUnifiedTopology:true
  }  
 ).catch(err=>{
     console.error(err.stack)

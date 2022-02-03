@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Dropdown from "react-bootstrap/Dropdown";
 import "../HotelAdmin/Styles.css";
-import Info from "../HotelAdmin/info";
 import { Link,useNavigate } from "react-router-dom";
 import l from "../images/maria.png";
 import Modal from "@material-ui/core/Modal";
@@ -62,10 +60,9 @@ const refreshList = ()=>{
             </div>
             <div className="systemusername">
               <h3>Maria Lerato</h3>
-              <p>App Admin</p>
             </div>
           </div>
-
+          <p className="addAdmin">App Admin   </p>
           <h2 className="subheading">Register Hotels</h2>
           <h2 style={{color:'white',marginTop:'-8%'}}>System Maintenance</h2>
           <div className="logout" style={{marginTop:'35%'}}>

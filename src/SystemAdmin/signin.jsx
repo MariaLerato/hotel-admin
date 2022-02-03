@@ -15,32 +15,8 @@ const SystemLogin = ()=>{
                     Montello
                 </h1>
 
-                <div className='dropdown'>
-                <Dropdown>
-                    <Dropdown.Toggle variant>
-                        Hotels
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                        <Dropdown.Item href='#'>
-                            Hotel Sandton Sun
-                        </Dropdown.Item>
-                        <Dropdown.Item href='#'>
-                            Sandton Star Hotel
-                        </Dropdown.Item>
-                        <Dropdown.Item href='#'>
-                            Palms Hotel
-                        </Dropdown.Item>
-                        <Dropdown.Item href='#'>
-                            Luxury Hotel
-                        </Dropdown.Item>
-                        <Dropdown.Item href='#'>
-                            Hotel @ Hatfield
-                        </Dropdown.Item>
-                        <Dropdown.Item href='#'>
-                            Sheranton Pretoria Hotel
-                        </Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
+                <div className='dropdown' style={{height:45,color:'#519c84',alignContent:'center',textAlign:'center',paddingTop:'4%'}}>
+                    Hotel Name
                 </div>
                 <h2 className='subheading'>Register Hotels</h2>
                     <h2>System Maintenance</h2>
@@ -49,9 +25,8 @@ const SystemLogin = ()=>{
                         <div className='profilepicture'>
                             <img src={l} alt={'admin'} ></img>
                         </div>
-
                         <div className='username'>
-                            <h3>System Admin</h3>
+                          <h3>System Admin</h3>
                         </div>
                     </div>
             </div>
@@ -59,7 +34,7 @@ const SystemLogin = ()=>{
                 <div className='heading'>
                     <h1>Welcome Admin</h1>
                 </div>
-                <div className='log' style={{justifyContent:'center',alignContent:'center',marginTop:'8%',marginLeft:'38%'}}>
+                <div className='log' style={{justifyContent:'center',alignContent:'center',marginTop:8,marginLeft:'38%'}}>
                     <h2>E-mail</h2>
                    <div className='input-icons'>
                    <i className='fa fa-envelope fa-2x'></i>

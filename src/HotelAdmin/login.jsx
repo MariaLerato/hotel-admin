@@ -33,7 +33,7 @@ const Login = ()=>{
                 <div className='heading'>
                     <h1>Welcome Admin</h1>
                 </div>
-                <div className='log'>
+                <div className='log' style={{justifyContent:'center',alignContent:'center',marginTop:8,marginLeft:'38%'}}>
                     <h2>E-mail</h2>
                    <div className='input-icons'>
                    <i className='fa fa-envelope fa-2x'></i>

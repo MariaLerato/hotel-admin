@@ -33,12 +33,15 @@ const Status = ()=>{
                     Hotel @ Hatfield
                 </div>
                 <h2 className='subheading'>Reservations</h2>
-         
+                <div className='reserv'>
            <Link to='/guestlist'><p> Guests</p></Link>
                 <p className='activity2'> Check In</p>
+                </div>
                 <h2>Management</h2>
+                <div className='reserv'>
                 <p> Settings </p>
                <Link to='/availablerooms'> <p> Rooms </p></Link>
+               </div>
                 <div className='user'>
                     <div className='profilepicture'>
                         <img src={k} alt={'admin'} ></img>

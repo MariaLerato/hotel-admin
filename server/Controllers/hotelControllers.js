@@ -11,13 +11,8 @@ export default class HotelsController{
             const description = req.body.text
             const hotelInfo = {
                 name:req.body.name,
-                guest:req.body.guest,
-                room:req.body.room,
-                province : req.body.province,
-                city:req.body.city,
-                checkIn:req.body.checkIn,
-                checkOut:req.body.checkOut,
-                status:req.body.status
+                image:req.body.image
+               
             }
             const date = new Date()
             const HotelResponse = await HotelDAO.addHotel(
@@ -103,13 +98,15 @@ export default class HotelsController{
         try{
             const hotelId = req.body.hotel_id
              const name=  req.body.name
+             const image = req.body.image
             const description = req.body.text
             const date = new Date()
             const HotelRoomResponse = await HotelDAO.addHotelRoom(
                 ObjectId(hotelId),
                 name,
                 description,
-                date
+                date,
+                image
             )
             console.log(HotelRoomResponse)
             res.json({status:"Success"})
