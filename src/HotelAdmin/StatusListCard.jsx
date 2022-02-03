@@ -6,7 +6,7 @@ export const StatusListCard = ({ data }) => {
   const [checked, setChecked] = useState();
   const navigate = useNavigate()
   const [out, setOut] = useState();
-  const [status,setStatus ] = useState('Pending')
+  const [status,setStatus ] = useState(data.status)
 
   const handleCheck = () => {
     setStatus('Checked In')
@@ -25,11 +25,11 @@ export const StatusListCard = ({ data }) => {
   },5000)
 
   return (
-    <div key={data.id} className="statusList">
+    <div key={data.guest_id} className="statusList">
       <div>
        <h5> {data.name}</h5>
-        <p>{data.location}</p>
-        <p style={{marginTop:'-5%',display:'flex'}}>Status:<p style={{color:'#f26741'}}>{status}</p></p>
+        <p>{data.province},{data.city}</p>
+        <p style={{marginTop:'-5%',display:'flex'}}>Status:<p style={{color:'#f26741'}}>{data.status}</p></p>
       </div>
       <div style={{ display: "flex", marginRight: "20%" }}>
         <button
@@ -37,10 +37,9 @@ export const StatusListCard = ({ data }) => {
           className="check"
           style={{ height: 40, width: '80%' }}
           onClick={() => handleCheck()
-        
           }
         >
-          {data.status1}
+          CheckIn
         </button>
         <button
           type="submit"
@@ -48,7 +47,7 @@ export const StatusListCard = ({ data }) => {
           style={{ height: 40, width: 100 }}
           onClick={() => handleOut()}
         >
-          {data.status2}
+          CheckOut
         </button>
       </div>
     </div>

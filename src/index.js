@@ -1,17 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Menu from './HotelAdmin/menu';
-import Splash from './HotelAdmin/splash';
 import SystemMenu from './SystemAdmin/System';
-import SystemLogin from './SystemAdmin/signin';
-import {BrowserRouter} from 'react-router-dom'
 
 ReactDOM.render(
   <React.StrictMode>
-  <SystemMenu />
+  <Menu />
 </React.StrictMode>,
   document.getElementById('root')
 );

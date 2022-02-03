@@ -1,12 +1,25 @@
-import React from 'react';
-import { Dropdown } from 'react-bootstrap';
+import React,{useState,useEffect} from 'react';
 import './Styles.css'
 import k from '../images/male.png'
 import Info from './info';
 import {Link } from 'react-router-dom'
 import { StatusListCard } from './StatusListCard';
+import BackendInfo from './service/guest'
 
 const Status = ()=>{
+    const [hotelGuest,setGuest] = useState([])
+    const [id,setId] = useState()
+    
+    const retrieveGuest = (e)=>{
+        BackendInfo.getAll()
+        .then((res)=>{
+            console.log(res.data)
+            setGuest(res.data.hotelGuest)
+        })
+    }
+    useEffect(()=>{
+        retrieveGuest()
+    },[])
     return(
         <>
         <div className='GuestContainer'>
@@ -58,7 +71,7 @@ const Status = ()=>{
                    </div>
                    <div className='listItems'>
                       {
-                         Info.guests.map(data=>
+                         hotelGuest.map(data=>
                             <StatusListCard data={data} />
                             )
                       }

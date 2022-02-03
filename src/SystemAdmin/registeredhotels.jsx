@@ -1,53 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import "../HotelAdmin/Styles.css";
 import Info from "../HotelAdmin/info";
 import { Link,useNavigate } from "react-router-dom";
 import l from "../images/maria.png";
 import Modal from "@material-ui/core/Modal";
+import HotelDataService from "../services/hotels"
 
 const Hotels = () => {
-  const registered =[ 
-    {
-    
-        id:'0',name:'Hotel Sandton Sun'
-    },
-    {
-        id:'1',name:'Sandton Star Hotel'
-    },
-    {
-        id:'2',name:'Palms Hotel'
-    },
-    {
-        id:'3',name:'Signature Luxury Hotel'
-    },
-    {
-        id:'4',name:'RH Protea Hotel'
-    
-    }]
+
   const [open, setOpen] = useState(false);
-  const [add, setAdd] = useState(registered);
+  const [add, setAdd] = useState(false);
   const [name,setName] = useState();
   const [search,setSearch] = useState();
-
+  const [hotel,setHotels] = useState([])
+  const [description,setDescription] = useState()
+  const [date,setDate] = useState(Date)
   const [ id,setId] = useState()
 
-    const FilterSearch = ()=>{
-     {add.filter(data=>data.name.includes(name)).map(data=> (
-        <li>
-          {data}
-        </li>
-      
-     ))}
-    }
-  const handleChange = (e)=>{
-    setName(e.target.value)
-  }
-  const handleAdd = ()=>{
-    const newList = Info.registered.concat({name})
-    setAdd(newList)
-    setName('')
-  }
+  useEffect(()=>{
+    retrieveHotels();
+  },[])  
+
 
   const close = () => {
     setOpen(false);
@@ -55,6 +29,26 @@ const Hotels = () => {
   const handleOpen = () => {
     setOpen(!open);
   };
+
+const retrieveHotels = ()=>{
+  HotelDataService.getAll()
+  .then(response=>{
+    console.log(response.data)
+    setHotels(response.data.hotels)
+  })
+} 
+ async  function registerHotel(e){
+  e.preventDefault()
+  const u={name,description,id}
+  console.log(u)
+  HotelDataService.createHotel(u)
+  .then(res=>console.log(res.data))
+ }
+
+const refreshList = ()=>{
+  retrieveHotels()
+}
+
 
   const navigate = useNavigate()
   return (
@@ -90,7 +84,7 @@ const Hotels = () => {
                 name="search"
                 placeholder="Search Hotels"
                 className="search-input"
-                onChange={FilterSearch}
+                // onChange={FilterSearch}
                
               />
             </div>
@@ -104,7 +98,9 @@ const Hotels = () => {
               <p>/Registered Hotels</p>
             </div>
             <div style={{ margin: "1%" }}>
-              { add.map((data) => (
+              
+              
+               {hotel.map((data) => (
               <ul>
                   <li key={data.id} className="listHotels">
                   <p
@@ -137,7 +133,7 @@ const Hotels = () => {
                 </li>
               </ul>
               ))}
-           
+            
               <div>
                 <button type="button" className="addnew" onClick={handleOpen}>
                   Add New Hotel
@@ -157,7 +153,7 @@ const Hotels = () => {
                   }}
                 >
                   <div className="ModalContainer">
-                    <div className="Add">
+                    <form className="Add" onSubmit={registerHotel}>
                       <h2>Add Hotel</h2>
                       <div className="hotel-input-icons">
                         <i className="fa fa-building fa-2x"></i>
@@ -165,7 +161,7 @@ const Hotels = () => {
                           type="text"
                           placeholder="Hotel Name"
                           className="input-field"
-                          onChange={handleChange}
+                          onChange={(e)=>setName(e.target.value)}
                           value={name}
                         />
                       </div>
@@ -175,6 +171,8 @@ const Hotels = () => {
                           type="text"
                           placeholder="Hotel Admin"
                           className="input-field"
+                          onChange={(e)=>setDescription(e.target.value)}
+                          value={description}
                         />
                         <div className="input-icons">
                           <i className="fa fa-address-card  fa-2x"></i>
@@ -182,6 +180,8 @@ const Hotels = () => {
                             type="text"
                             placeholder="Hotel ID"
                             className="input-field"
+                            onChange={(e)=>setId(e.target.value)}
+                            value={id}
                           />
                         </div>
                       </div>
@@ -189,11 +189,11 @@ const Hotels = () => {
                         type="button"
                         className="addnew"
                         style={{ width: 170, marginLeft: "65%" }}
-                        onClick={handleAdd}
+                       onClick={registerHotel}
                       >
                         Add New Hotel
                       </button>
-                    </div>
+                    </form>
                   </div>
                 </Modal>
               </div>
